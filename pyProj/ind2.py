@@ -9,16 +9,24 @@ a = list(map(int, input().split()))
 if not a:
     print("List is empty", file=sys.stderr)
     exit(1)
-ind_1, ind_2 = 11, 11
-min = min(a)
-min_ind = a.index(min)
-sum = 0;
-for ind, val in enumerate(a):
-    if val < 0 and ind_1 == 11:
-        ind_1 = ind
-    elif val < 0 and (ind_1 != 11 and ind_2 == 11):
-        ind_2 = ind
-for i in a[ind_1 + 1:ind_2]:
-    sum += i
-print(f"Original list: {a}\nMinimal element index: a[{min_ind}] = {min}\n"
-      f"Sum of numbers, between 1st and 2nd elements: {sum}")
+rev  = a.copy()
+rev.reverse()
+maxInd = a.index(max(a))
+sum = 0
+x = 1
+for i in a:
+    if i < 0:
+        x *= i
+if x == 1:
+    x = "No required numbers"
+for i in a:
+    if a.index(i) == maxInd:
+        break
+    else:
+        if i > 0:
+            sum += i
+if sum == 0:
+    sum = "There are no required numbers before max element"
+print(f"Original list: {a}\nReverted list: {rev}\n"
+      f"Product of negative elements: {x}\n"
+      f"Sum of numbers, before maximum element: {sum}")
