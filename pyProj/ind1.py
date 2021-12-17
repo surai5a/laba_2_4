@@ -3,6 +3,7 @@
 
 import sys
 
+
 if __name__ == '__main__':
     print("Write list elements with spaces: ")
     a = list(map(int, input().split()))

@@ -3,6 +3,7 @@
 
 import sys
 
+
 if __name__ == '__main__':
     print("Write list elements with spaces: ")
     a = list(map(int, input().split()))
@@ -19,14 +20,17 @@ if __name__ == '__main__':
             x *= i
     if x == 1:
         x = "No required numbers"
-    for i in a:
-        if a.index(i) == maxInd:
+    print(maxInd)
+    for i, item in enumerate(a):
+        if i == maxInd:
             break
         else:
-            if i > 0:
-                sumObj += i
+            if item > 0:
+                sumObj += item
     if sumObj == 0:
         sumObj = "There are no required numbers before max element"
-    print(f"Original list: {a}\nReverted list: {rev}\n"
-          f"Product of negative elements: {x}\n"
-          f"Sum of positive numbers, before maximum element: {sumObj}")
+    print(
+        f"Original list: {a}\nReverted list: {rev}\n"
+        f"Product of negative elements: {x}\n"
+        f"Sum of positive numbers, before maximum element: {sumObj}"
+        )
