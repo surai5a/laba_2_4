@@ -12,25 +12,25 @@ if __name__ == '__main__':
         exit(1)
     rev = a.copy()
     rev.reverse()
-    maxInd = a.index(max(a))
-    sumObj = 0
+    max_ind = a.index(max(a))
+    sum_obj = 0
     x = 1
     for i in a:
         if i < 0:
             x *= i
     if x == 1:
         x = "No required numbers"
-    print(maxInd)
+    print(max_ind)
     for i, item in enumerate(a):
-        if i == maxInd:
+        if i == max_ind:
             break
         else:
             if item > 0:
-                sumObj += item
-    if sumObj == 0:
-        sumObj = "There are no required numbers before max element"
+                sum_obj += item
+    if sum_obj == 0:
+        sum_obj = "There are no required numbers before max element"
     print(
         f"Original list: {a}\nReverted list: {rev}\n"
         f"Product of negative elements: {x}\n"
-        f"Sum of positive numbers, before maximum element: {sumObj}"
+        f"Sum of positive numbers, before maximum element: {sum_obj}"
         )
